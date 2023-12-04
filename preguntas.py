@@ -15,7 +15,7 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv')
+    df =  pd.read_csv('gm_2008_region.csv',sep=',')
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df['life'].values
@@ -28,10 +28,10 @@ def pregunta_01():
     print(X.shape)
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(-1, 1)
+    y_reshaped = y.reshape(-1,1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(-1, 1)
+    X_reshaped = X.reshape(-1,1)
 
     # Imprima las nuevas dimensiones de `y`
     print(y_reshaped.shape)
@@ -53,16 +53,16 @@ def pregunta_02():
     print(df.shape)
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print("Correlación entre life y fertility:", round(df['life'].corr(df['fertility']), 4))
+    print(round(df['life'].corr(df['fertility']), 4))
 
     # Imprima la media de la columna `life` con 4 decimales.
-    print("Media de life:", round(df['life'].mean(), 4))
+    print(round(df['life'].mean(), 4))
 
     # Imprima el tipo de dato de la columna `fertility`.
-    print("Tipo de dato de fertility:", df['fertility'].dtype)
+    print(type(df['fertility']))
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print("Correlación entre GDP y life:", round(df['GDP'].corr(df['life']), 4))
+    print(round(df['GDP'].corr(df['life']), 4))
 
 
 def pregunta_03():
